@@ -1,0 +1,27 @@
+{
+  "name": "host-container",
+  "version": "1.0.0",
+  "description": "Container to host simple static applications using a node server, so files can be deployed using rsync",
+  "main": "server.js",
+  "scripts": {
+    "test": "eslint server.js",
+    "postinstall": "mkdir -p site/",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RealOrangeOne/host-container.git"
+  },
+  "author": "Jake Howard <git@theorangeone.net>",
+  "bugs": {
+    "url": "https://github.com/RealOrangeOne/host-container/issues"
+  },
+  "homepage": "https://github.com/RealOrangeOne/host-container#readme",
+  "dependencies": {
+    "express": "=4.13.3"
+  },
+  "devDependencies": {
+    "eslint": "=1.9.0",
+    "eslint-config": "git://github.com/dabapps/eslint-config.git"
+  },
+}
