@@ -28,7 +28,7 @@ app.use(
 
 // Cannot find any file
 app.use(
-  allFiles, express.static(serveDir + '/core/404.html', expressConfig)
+  allFiles, express.static(serveDir + '/.404.html', expressConfig)
 );
 
 const server = app.listen(PORT, function () {
