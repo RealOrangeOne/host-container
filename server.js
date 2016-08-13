@@ -7,7 +7,7 @@ const directory = /\/$/;
 const allFiles = /.*/;
 
 const expressConfig = {
-  dotfiles: 'deny',
+  dotfiles: 'ignore',
   index: false,
   redirect: true
 };
@@ -32,6 +32,5 @@ app.use(
 );
 
 const server = app.listen(PORT, function () {
-  const serverPort = server.address().port;
-  console.log('Server started on port ' + serverPort);
+  console.log('Server started on port ' + server.address().port);
 });
