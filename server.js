@@ -1,10 +1,12 @@
 const express = require('express');
+const staticFile = require('connect-static-file');
+const path = require('path');
 
-const PORT = process.env.PORT;
-const serveDir = __dirname + '/site';
+const PORT = 5000;
+const SERVE_DIR = path.join(__dirname, '/site');
+const PAGE_404 = path.join(SERVE_DIR, '.404.html');
 
 const directory = /\/$/;
-const allFiles = /.*/;
 
 const expressConfig = {
   dotfiles: 'ignore',
@@ -14,22 +16,21 @@ const expressConfig = {
 
 const app = express();
 
+
 app.use(function (request, response, next) {
-  // If path is directory then serve index.html
   if (directory.exec(request.url)) {
-    request.url += '/index.html';
+    request.url = path.join(request.url, 'index.html');
   }
   next();
 });
 
-app.use(
-  express.static(serveDir, expressConfig)
-);
+app.use(express.static(SERVE_DIR, expressConfig));
 
-// Cannot find any file
-app.use(
-  allFiles, express.static(serveDir + '/.404.html', expressConfig)
-);
+app.use(function (request, response, next) {
+  response.statusCode = 404;
+  staticFile(PAGE_404)(request, response, next);
+});
+
 
 const server = app.listen(PORT, function () {
   console.log('Server started on port ' + server.address().port);

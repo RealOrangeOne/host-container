@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/RealOrangeOne/host-container#readme",
   "dependencies": {
+    "connect-static-file": "=1.1.2",
     "express": "=4.14.0"
   },
   "devDependencies": {
