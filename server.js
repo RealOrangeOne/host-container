@@ -3,7 +3,7 @@ const staticFile = require('connect-static-file');
 const compression = require('compression');
 const path = require('path');
 
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 const SERVE_DIR = path.join(__dirname, '/site');
 const PAGE_404 = path.join(SERVE_DIR, '.404.html');
 
