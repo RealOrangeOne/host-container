@@ -4,7 +4,7 @@
   "description": "Container to host simple static applications using a node server, so files can be deployed using rsync",
   "main": "server.js",
   "scripts": {
-    "test": "eslint server.js",
+    "test": "eslint server.js && nsp check",
     "start": "node server.js"
   },
   "engines": {
@@ -27,6 +27,7 @@
   },
   "devDependencies": {
     "eslint": "=1.9.0",
-    "eslint-config": "git://github.com/dabapps/eslint-config.git"
+    "eslint-config": "git://github.com/dabapps/eslint-config.git",
+    "nsp": "=2.6.1"
   }
 }
