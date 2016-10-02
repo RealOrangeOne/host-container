@@ -1,6 +1,7 @@
 const express = require('express');
 const staticFile = require('connect-static-file');
 const compression = require('compression');
+const helmet = require('helmet');
 const path = require('path');
 
 const PORT = process.env.PORT || 5000;
@@ -18,6 +19,7 @@ const expressConfig = {
 const app = express();
 
 app.use(compression({ level: 9 }));
+app.use(helmet());
 
 
 app.use(function (request, response, next) {
