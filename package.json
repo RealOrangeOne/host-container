@@ -23,7 +23,9 @@
     "compression": "=1.6.2",
     "connect-static-file": "=1.1.2",
     "express": "=4.14.0",
-    "helmet": "=2.3.0"
+    "express-winston": "=2.0.0",
+    "helmet": "=2.3.0",
+    "winston": "=2.2.0"
   },
   "devDependencies": {
     "eslint": "=1.9.0",

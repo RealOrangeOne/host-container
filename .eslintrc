@@ -1,6 +1,7 @@
 {
   "extends": "./node_modules/eslint-config/.eslintrc",
   "env": {
-    "node": true
+    "node": true,
+    "browser": false
   }
 }
