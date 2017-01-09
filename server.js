@@ -6,38 +6,29 @@ const path = require('path');
 const winston = require('winston');
 const expressWinston = require('express-winston');
 
-const IN_TEST = process.env.NODE_ENV === 'true';
 const PORT = process.env.PORT || 5000;
-const SERVE_DIR = path.join(__dirname, '/site');
+const SERVE_DIR = process.argv[process.argv.length - 1] || 'site/'
 const PAGE_404 = path.join(SERVE_DIR, '.404.html');
-const EXPRESS_CONFIG = {
-  dotfiles: 'ignore',
-  index: false,
-  redirect: true
-};
-const LOGGER_MESSAGE = '{{ req.url }}'
-  .concat('status:{{ res.statusCode }} ')
-  .concat('useragent:{{ req.headers["user-agent"] }} ')
-  .concat('time:{{ res.responseTime }}ms');
 
 const app = express();
 
 app.use(compression({ level: 9 }));
 app.use(helmet());
-if (IN_TEST) {
-  console.log('Enabling Logging...');
-  app.use(expressWinston.logger({
-    transports: [
-      new winston.transports.Console({
-        colorize: true
-      })
-    ],
-    meta: false,
-    msg: LOGGER_MESSAGE,
-    colorize: true,
-    statusLevels: true
-  }));
-}
+
+app.use(expressWinston.logger({
+  transports: [
+    new winston.transports.Console({
+      colorize: true
+    })
+  ],
+  meta: false,
+  msg: '{{ req.url }} '
+    .concat('status:{{ res.statusCode }} ')
+    .concat('useragent:{{ req.headers["user-agent"] }} ')
+    .concat('time:{{ res.responseTime }}ms'),
+  colorize: true,
+  statusLevels: true
+}));
 
 app.use(function (request, response, next) {
   if (request.url.endsWith('/')) {
@@ -46,7 +37,11 @@ app.use(function (request, response, next) {
   next();
 });
 
-app.use(express.static(SERVE_DIR, EXPRESS_CONFIG));
+app.use(express.static(SERVE_DIR, {
+  dotfiles: 'ignore',
+  index: false,
+  redirect: true
+}));
 
 app.use(function (request, response, next) {
   response.statusCode = 404;
@@ -55,9 +50,7 @@ app.use(function (request, response, next) {
 
 
 const server = app.listen(PORT, function () {
-  if (IN_TEST) {
-    console.log('Server started on port ' + server.address().port);
-  }
+  console.log('Server started on port ' + server.address().port);
 });
 
 module.exports = server;

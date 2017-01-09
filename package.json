@@ -1,8 +1,11 @@
 {
-  "name": "host-container",
+  "name": "tstatic",
   "version": "1.0.0",
   "description": "Container to host simple static applications using a node server, so files can be deployed using rsync",
   "main": "server.js",
+  "bin": {
+    "tstatic": "./server.js"
+  }
   "scripts": {
     "test": "npm run mocha && npm run lint && nsp check",
     "lint": "eslint server.js tests/**.js",
@@ -10,17 +13,17 @@
     "mocha": "NODE_ENV=test mocha tests/**.test.js"
   },
   "engines": {
-    "node": "5.11.1"
+    "node": "6.9.4"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/RealOrangeOne/host-container.git"
+    "url": "git+https://github.com/RealOrangeOne/tstatic.git"
   },
   "author": "Jake Howard <git@theorangeone.net>",
   "bugs": {
-    "url": "https://github.com/RealOrangeOne/host-container/issues"
+    "url": "https://github.com/RealOrangeOne/tstatic/issues"
   },
-  "homepage": "https://github.com/RealOrangeOne/host-container#readme",
+  "homepage": "https://github.com/RealOrangeOne/tstatic#readme",
   "dependencies": {
     "compression": "=1.6.2",
     "connect-static-file": "=1.1.2",
