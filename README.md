@@ -1,4 +1,4 @@
-# host-container [![CircleCI](https://circleci.com/gh/RealOrangeOne/host-container/tree/master.svg?style=svg)](https://circleci.com/gh/RealOrangeOne/host-container/tree/master)
+# tstatic [![CircleCI](https://circleci.com/gh/RealOrangeOne/tstatic/tree/master.svg?style=svg)](https://circleci.com/gh/RealOrangeOne/tstatic/tree/master)
 Container to host simple static applications using a node server, so files can be deployed using rsync
 
 ## Why is this a thing?
