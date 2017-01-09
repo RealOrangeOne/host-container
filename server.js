@@ -7,7 +7,12 @@ const winston = require('winston');
 const expressWinston = require('express-winston');
 
 const PORT = process.env.PORT || 5000;
-const SERVE_DIR = process.argv[process.argv.length - 1] || 'site/'
+let SERVE_DIR;
+if (process.env.NODE_ENV === 'test') {
+  SERVE_DIR = 'site';
+} else {
+  SERVE_DIR = process.argv[process.argv.length - 1];
+}
 const PAGE_404 = path.join(SERVE_DIR, '.404.html');
 
 const app = express();
