@@ -5,7 +5,7 @@
   "main": "server.js",
   "bin": {
     "tstatic": "./server.js"
-  }
+  },
   "scripts": {
     "test": "npm run mocha && npm run lint && nsp check",
     "lint": "eslint server.js tests/**.js",
@@ -28,15 +28,15 @@
     "compression": "=1.6.2",
     "connect-static-file": "=1.1.2",
     "express": "=4.14.0",
-    "express-winston": "=2.0.0",
-    "helmet": "=2.3.0",
-    "winston": "=2.2.0"
+    "express-winston": "=2.1.2",
+    "helmet": "=3.3.0",
+    "winston": "=2.3.0"
   },
   "devDependencies": {
     "eslint": "=1.9.0",
-    "eslint-config": "git://github.com/dabapps/eslint-config.git",
-    "mocha": "=3.1.2",
-    "nsp": "=2.6.1",
+    "eslint-config": "git://github.com/dabapps/eslint-config.git#1.1.4",
+    "mocha": "=3.2.0",
+    "nsp": "=2.6.2",
     "supertest": "=2.0.1"
   }
 }
