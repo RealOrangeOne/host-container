@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const express = require('express');
 const staticFile = require('connect-static-file');
 const compression = require('compression');
