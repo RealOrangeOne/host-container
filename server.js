@@ -6,6 +6,9 @@ const helmet = require('helmet');
 const path = require('path');
 const winston = require('winston');
 const expressWinston = require('express-winston');
+const opbeat = require('opbeat').start({
+  active: process.env.NODE_ENV === 'production'
+});
 
 const PORT = process.env.PORT || 5000;
 let SERVE_DIR;
@@ -17,9 +20,6 @@ if (process.env.NODE_ENV === 'test') {
 const PAGE_404 = path.join(SERVE_DIR, '.404.html');
 
 const app = express();
-
-app.use(compression({ level: 9 }));
-app.use(helmet());
 
 app.use(expressWinston.logger({
   transports: [
@@ -54,6 +54,10 @@ app.use(function (request, response, next) {
   staticFile(PAGE_404)(request, response, next);
 });
 
+
+app.use(compression({ level: 9 }));
+app.use(helmet());
+app.use(opbeat.middleware.express());
 
 const server = app.listen(PORT, function () {
   console.log('Server started on port ' + server.address().port);
