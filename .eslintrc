@@ -1,8 +1,16 @@
 {
-  "extends": "./node_modules/eslint-config/.eslintrc",
+  "extends": "eslint-config-dabapps/base/.eslintrc",
   "env": {
     "node": true,
     "browser": false,
-    "mocha": true
+    "mocha": true,
+    "es6": true
+  },
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 6
+  },
+  "rules": {
+    "no-console": 0
   }
 }
