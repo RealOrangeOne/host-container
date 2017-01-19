@@ -2,14 +2,14 @@
   "name": "tstatic",
   "version": "1.0.0",
   "description": "Container to host simple static applications using a node server, so files can be deployed using rsync",
-  "main": "server.js",
+  "main": "./src/server.js",
   "bin": {
-    "tstatic": "./server.js"
+    "tstatic": "./src/server.js"
   },
   "scripts": {
     "test": "npm run mocha && npm run lint && nsp check",
-    "lint": "eslint server.js tests/**.js",
-    "start": "./server.js",
+    "lint": "eslint src/ tests/",
+    "start": "./src/server.js site/",
     "mocha": "NODE_ENV=test mocha tests/**.test.js"
   },
   "engines": {

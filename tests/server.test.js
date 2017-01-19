@@ -5,7 +5,7 @@ const fs = require('fs');
 describe('Server', function () {
   var server;
   before(function () {
-    server = require('../server');
+    server = require('../src/server');
   });
 
   after(function () {
