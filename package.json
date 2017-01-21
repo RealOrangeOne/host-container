@@ -29,6 +29,7 @@
     "compression": "=1.6.2",
     "connect-static-file": "=1.1.2",
     "express": "=4.14.0",
+    "express-basic-auth": "=0.2.3",
     "express-winston": "=2.1.2",
     "helmet": "=3.4.0",
     "opbeat": "=4.7.0",
