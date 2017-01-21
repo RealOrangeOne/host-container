@@ -3,7 +3,7 @@
 console.log('Starting Server...');
 
 const app = require('express')();
-const utils = require('./utils');
+const utils = require('./consts');
 
 const compression = require('compression');
 const helmet = require('helmet');

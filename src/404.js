@@ -1,6 +1,6 @@
 const staticFile = require('connect-static-file');
 const path = require('path');
-const { SERVE_DIR } = require('./utils');
+const { SERVE_DIR } = require('./consts');
 
 const handle404 = staticFile(path.join(SERVE_DIR, '.404.html'));
 module.exports = function (request, response, next) {

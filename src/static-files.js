@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-const { SERVE_DIR } = require('./utils');
+const { SERVE_DIR } = require('./consts');
 
 module.exports.indexHandle = function (request, response, next) {
   if (request.url.endsWith('/')) {
