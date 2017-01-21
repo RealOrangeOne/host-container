@@ -1,16 +1,30 @@
 # tstatic [![CircleCI](https://circleci.com/gh/RealOrangeOne/tstatic/tree/master.svg?style=svg)](https://circleci.com/gh/RealOrangeOne/tstatic/tree/master)
-Container to host simple static applications using a node server, so files can be deployed using rsync
+The only static-file server you'll ever need!
 
-## Why is this a thing?
-When hosting static applications on my server, it makes life a lot easier if they are run in container-like environments, so I can start and stop the server from the command line, seperately from any other hosted services. This works great for services like Django-applications, but for simpler apps like static-sites, this isnt great.
+### Features:
+- Logging
+- Basic-Auth _(optional)_
+- Custom 404 page
+- Optimum Compression - [`compression`](https://www.npmjs.com/package/compression)
+- Security checks / headers - [`helmet`](https://www.npmjs.com/package/helmet)
+- Opbeat error-reporting - [docs](https://opbeat.com/docs/articles/get-started-with-express/)
 
-One of the key reasons I want this is because it means I can push static data to the server using a tool like rsync, instead of using some janky ssh library to run the clone and setup commands on the server.
+### Usage / Configuration
+```bash
+tstatic <directory>
+```
+`directory` is where your static files are.
 
-### So how does it work?
+404 errors will return with `<directory>/.404.html`, with status code 404. If this file doesnt exist, plain error page will be shown.
 
-The hosting and switching itself is done using a private, closed-source tool. I can't go into detail, but it accepts commands to run from a proc file. In this project, this proc file contains an entry to run the `server.js` file with node, which contains the server.
 
-The server then serves the directory `site/` on whatever port it has been given. This means when I push data to the directory, the data will be instantly available to the web server with no need to restart or reconfigure.
+#### Environment
+Make sure to set `NODE_ENV` to `production`!
 
-### _"So, can I use it?"_
-Sure, if this solution suits your needs, although It's unlikey to, seeing as this is a very niche problem. The exact ways this service works are unlikely to change, due to the fact it fits my needs perfectly, but any improvements are always welcome!
+`PORT`: The port you want the server to listen on. Default: `5000`.
+
+`BASIC_AUTH_USERNAME` / `BASIC_AUTH_PASSWORD`: Credentials for built-in basic auth
+
+Opbeat middleware is configured using documented variables [here](https://opbeat.com/docs/articles/opbeat-for-nodejs-api/#appid). _Requires production `NODE_ENV`!_
+
+
