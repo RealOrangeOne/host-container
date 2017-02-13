@@ -20,14 +20,13 @@ const basicAuth = require('./basic-auth');
 
 if (consts.ALLOWED_IPS) {
   app.set('trust proxy', true);
-
   app.use(AccessControl({
     mode: 'allow',
     allows: consts.ALLOWED_IPS,
-    forceConnectionAddress: true,
     statusCode: 404
   }));
 }
+
 // Custom Middleware
 app.use(logging);
 app.use(basicAuth);
