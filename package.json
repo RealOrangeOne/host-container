@@ -33,6 +33,7 @@
     "express-winston": "=2.1.2",
     "helmet": "=3.4.0",
     "opbeat": "=4.7.0",
+    "serve-index": "=1.8.0",
     "winston": "=2.3.0"
   },
   "devDependencies": {

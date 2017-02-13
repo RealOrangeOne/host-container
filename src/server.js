@@ -7,6 +7,7 @@ const consts = require('./consts');
 
 const compression = require('compression');
 const helmet = require('helmet');
+const serveIndex = require('serve-index');
 const opbeat = require('opbeat').start({
   active: consts.IN_PRODUCTION
 });
@@ -19,7 +20,15 @@ const basicAuth = require('./basic-auth');
 // Custom Middleware
 app.use(logging);
 app.use(basicAuth);
-app.use(staticFiles.indexHandle);
+
+if (consts.DIR_LIST) {
+  app.use(serveIndex(consts.SERVE_DIR, {
+    icons: true
+  }));
+} else {
+  app.use(staticFiles.indexHandle);
+}
+
 app.use(staticFiles.static);
 app.use(handle404);
 
