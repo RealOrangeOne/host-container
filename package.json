@@ -7,10 +7,9 @@
     "tstatic": "./src/server.js"
   },
   "scripts": {
-    "test": "npm run mocha && npm run lint && nsp check",
-    "lint": "eslint src/ tests/",
     "start": "./src/server.js site/",
-    "mocha": "NODE_ENV=test mocha tests/**.test.js"
+    "postinstall": "typings install",
+    "build": "tsc"
   },
   "engines": {
     "node": "6.9.4"
@@ -41,6 +40,8 @@
     "eslint-config": "dabapps/eslint-config#2.0.5",
     "mocha": "=3.2.0",
     "nsp": "=2.6.2",
-    "supertest": "=2.0.1"
+    "supertest": "=2.0.1",
+    "typescript": "^2.1.6",
+    "typings": "^2.1.0"
   }
 }
