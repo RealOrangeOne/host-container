@@ -15,6 +15,6 @@ export default function createServer(opts : Options) {
             statusCode: 404
         }));
     }
-    
+
     return app;
 }
