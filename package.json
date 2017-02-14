@@ -2,12 +2,12 @@
   "name": "tstatic",
   "version": "1.0.0",
   "description": "Container to host simple static applications using a node server, so files can be deployed using rsync",
-  "main": "./src/server.js",
+  "main": "node ./dist/server.js",
   "bin": {
-    "tstatic": "./src/server.js"
+    "tstatic": "node ./dist/server.js"
   },
   "scripts": {
-    "start": "./src/server.js site/",
+    "start": "node ./dist/server.js site/",
     "postinstall": "typings install",
     "build": "tsc"
   },

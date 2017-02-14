@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "outDir": "dist",
+    "rootDir": "src",
+    "allowSyntheticDefaultImports": true,
+    "noImplicitAny": true,
+    "experimentalDecorators": true,
+    "preserveConstEnums": true,
+    "allowJs": true,
+    "sourceMap": true
+  },
+  "filesGlob": [
+    "typings/index.d.ts",
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "dist",
+    "node_modules"
+  ],
+  "typeRoots": [
+    "node_modules",
+    "typings",
+    "src/types"
+  ],
+  "compileOnSave": false
+}
