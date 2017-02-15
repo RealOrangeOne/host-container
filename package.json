@@ -10,7 +10,7 @@
     "start": "node ./dist/server.js site/",
     "postinstall": "typings install",
     "build": "tsc",
-    "test": "npm run build"
+    "test": "npm run build && nsp check"
   },
   "engines": {
     "node": "6.9.4"
@@ -28,20 +28,20 @@
     "basic-auth": "=1.1.0",
     "compression": "=1.6.2",
     "connect-static-file": "=1.1.2",
-    "express": "=4.14.0",
-    "express-basic-auth": "=0.2.3",
+    "express": "=4.14.1",
+    "express-basic-auth": "=0.3.2",
     "express-ip-access-control": "=1.0.5",
-    "express-winston": "=2.1.2",
+    "express-winston": "=2.2.0",
     "helmet": "=3.4.0",
-    "opbeat": "=4.7.0",
+    "opbeat": "=4.11.0",
     "serve-index": "=1.8.0",
-    "winston": "=2.3.0"
+    "winston": "=2.3.1"
   },
   "devDependencies": {
     "mocha": "=3.2.0",
     "nsp": "=2.6.2",
-    "supertest": "=2.0.1",
-    "typescript": "^2.1.6",
-    "typings": "^2.1.0"
+    "supertest": "=3.0.0",
+    "typescript": "=2.1.6",
+    "typings": "=2.1.0"
   }
 }
