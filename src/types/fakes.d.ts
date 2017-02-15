@@ -2,3 +2,4 @@
 
 declare module 'express-ip-access-control';
 declare module 'connect-static-file';
+declare module 'express-basic-auth'
