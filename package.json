@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/RealOrangeOne/tstatic#readme",
   "dependencies": {
-    "basic-auth": "^1.1.0",
+    "basic-auth": "=1.1.0",
     "compression": "=1.6.2",
     "connect-static-file": "=1.1.2",
     "express": "=4.14.0",
@@ -38,7 +38,6 @@
     "winston": "=2.3.0"
   },
   "devDependencies": {
-    "eslint-config": "dabapps/eslint-config#2.0.5",
     "mocha": "=3.2.0",
     "nsp": "=2.6.2",
     "supertest": "=2.0.1",
