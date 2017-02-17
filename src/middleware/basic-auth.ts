@@ -1,4 +1,4 @@
-import basicAuth from 'express-basic-auth';
+import * as basicAuth from 'express-basic-auth';
 
 export default function basicAuthHandler(username : string, password : string) {
     return basicAuth({
