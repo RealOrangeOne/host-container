@@ -10,7 +10,8 @@
     "start": "node ./dist/index.js",
     "postinstall": "typings install",
     "build": "tsc",
-    "test": "npm run build && nsp check"
+    "test": "npm run build && nsp check",
+    "lint": "tslint src/**/*.ts"
   },
   "engines": {
     "node": "6.9.4"
@@ -43,6 +44,7 @@
     "mocha": "=3.2.0",
     "nsp": "=2.6.2",
     "supertest": "=3.0.0",
+    "tslint": "=4.4.2",
     "typescript": "=2.1.6",
     "typings": "=2.1.0"
   }
