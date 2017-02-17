@@ -6,4 +6,5 @@ export interface Options {
     dirList: boolean;
     serveDir: string;
     opbeat: boolean;
+    open: boolean;
 }

@@ -35,6 +35,7 @@
     "express-winston": "=2.2.0",
     "helmet": "=3.4.0",
     "opbeat": "=4.11.0",
+    "open": "=0.0.5",
     "serve-index": "=1.8.0",
     "winston": "=2.3.1"
   },

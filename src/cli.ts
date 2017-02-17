@@ -19,7 +19,8 @@ Options:
   -b <auth> --basic-auth=<auth>   Enable basic-auth.
   -i <ips> --ips=<ips>  Allowed IP addresses.
   -l --list-dir  List Directory.
-  -o --opbeat  Enable Opbeat.
+  --opbeat  Enable Opbeat.
+  -o --open  Open in browser after start.
 `;
 
 export default function getArgs() : Options {
@@ -33,6 +34,7 @@ export default function getArgs() : Options {
         basicAuth: rawArgs['--basic-auth'] ? rawArgs['--basic-auth'].split(':') : [],
         dirList: rawArgs['--list-dir'],
         serveDir: rawArgs['<dir>'],
-        opbeat: rawArgs['--opbeat']
+        opbeat: rawArgs['--opbeat'],
+        open: rawArgs['--open']
     };
 }
