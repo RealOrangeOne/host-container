@@ -13,7 +13,7 @@ function getArgs() : Options {
     });
     return {
         allowed_ips: rawArgs['--ips'] ? rawArgs['--ips'].split(',') : [],
-        basicAuth: rawArgs['--basic-auth'] || '',
+        basicAuth: rawArgs['--basic-auth'] ? rawArgs['--basic-auth'].split(':') : [],
         dirList: rawArgs['--list-dir'],
         serveDir: rawArgs['<dir>'],
         opbeat: rawArgs['--opbeat']

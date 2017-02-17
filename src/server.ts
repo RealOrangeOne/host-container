@@ -30,8 +30,7 @@ export default function createServer(opts : Options) : Application {
     }
 
     if (opts.basicAuth) {
-        const credentials = opts.basicAuth.split(':');
-        app.use(basicAuthHandler(credentials[0], credentials[1]));
+        app.use(basicAuthHandler(opts.basicAuth[0], opts.basicAuth[1]));
     }
 
     if (opts.dirList) {
