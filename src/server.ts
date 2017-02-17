@@ -1,4 +1,4 @@
-import express from 'express';
+import express, { Application } from 'express';
 
 import AccessControl from 'express-ip-access-control';
 import compression from 'compression';
@@ -12,7 +12,7 @@ import handle404 from './middleware/404';
 
 import { Options } from './types';
 
-export default function createServer(opts : Options) {
+export default function createServer(opts : Options) : Application {
     const app = express();
     const opbeatHandle = opbeat.start({
         active: opts.opbeat

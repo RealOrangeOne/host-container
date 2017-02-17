@@ -2,12 +2,12 @@
   "name": "tstatic",
   "version": "1.0.0",
   "description": "Container to host simple static applications using a node server, so files can be deployed using rsync",
-  "main": "node ./dist/server.js",
+  "main": "node ./dist/index.js",
   "bin": {
-    "tstatic": "node ./dist/server.js"
+    "tstatic": "node ./dist/index.js"
   },
   "scripts": {
-    "start": "node ./dist/server.js site/",
+    "start": "node ./dist/index.js",
     "postinstall": "typings install",
     "build": "tsc",
     "test": "npm run build && nsp check"
@@ -28,6 +28,7 @@
     "basic-auth": "=1.1.0",
     "compression": "=1.6.2",
     "connect-static-file": "=1.1.2",
+    "docopt": "=0.6.2",
     "express": "=4.14.1",
     "express-basic-auth": "=0.3.2",
     "express-ip-access-control": "=1.0.5",
