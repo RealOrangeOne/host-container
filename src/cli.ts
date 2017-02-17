@@ -15,6 +15,7 @@ Usage:
 Options:
   -h --help     Show this screen.
   --version     Show version.
+  -p <port> --port=<port>  Port to listen on.
   -b <auth> --basic-auth=<auth>   Enable basic-auth.
   -i <ips> --ips=<ips>  Allowed IP addresses.
   -l --list-dir  List Directory.
@@ -27,6 +28,7 @@ export default function getArgs() : Options {
         help: true
     });
     return {
+        port: rawArgs['--port'] || process.env.PORT || 5000,
         allowed_ips: rawArgs['--ips'] ? rawArgs['--ips'].split(',') : [],
         basicAuth: rawArgs['--basic-auth'] ? rawArgs['--basic-auth'].split(':') : [],
         dirList: rawArgs['--list-dir'],

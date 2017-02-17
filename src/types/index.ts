@@ -1,5 +1,6 @@
 
 export interface Options {
+    port: number;
     allowed_ips: string[];
     basicAuth: string[];
     dirList: boolean;
