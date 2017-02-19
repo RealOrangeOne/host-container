@@ -1,6 +1,7 @@
 import { expect } from 'chai';
 import { runServer } from './helpers';
 import * as fs from 'fs';
+import * as path from 'path';
 
 
 describe('Server', function () {
@@ -39,7 +40,7 @@ describe('Server', function () {
     });
 
     describe('index route', function () {
-        const body = fs.readFileSync(__dirname + '/../site/index.html').toString();
+        const body = fs.readFileSync(path.join(__dirname, '..', 'site', 'index.html')).toString();
 
         ['', '/', '/index.html'].forEach(function (path : string) {
             it('should render ' + path, function (done) {
