@@ -8,3 +8,4 @@ declare module 'express-winston';
 declare module 'opbeat';
 declare module 'docopt';
 declare module 'open';
+declare module 'node-fetch';

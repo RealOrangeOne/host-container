@@ -11,6 +11,7 @@
     "postinstall": "typings install",
     "build": "tsc",
     "test": "npm run build && nsp check",
+    "mocha": "NODE_ENV=test mocha --compilers ts:ts-node/register --require scripts/test-helper.js src/__tests__/**.test.ts",
     "lint": "tslint src/**/*.ts"
   },
   "engines": {
@@ -41,9 +42,12 @@
     "winston": "=2.3.1"
   },
   "devDependencies": {
+    "chai": "=3.5.0",
     "mocha": "=3.2.0",
+    "node-fetch": "=1.6.3",
     "nsp": "=2.6.2",
     "supertest": "=3.0.0",
+    "ts-node": "=2.1.0",
     "tslint": "=4.4.2",
     "typescript": "=2.1.6",
     "typings": "=2.1.0"

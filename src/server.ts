@@ -15,7 +15,9 @@ import { Options } from './types';
 export default function createServer(opts : Options) : express.Application {
     const app = express();
 
-    app.use(logging);
+    if (process.env.NODE_ENV !== 'test') {
+        app.use(logging);
+    }
 
     if (opts.allowed_ips.length) {
         app.set('trust proxy', true);

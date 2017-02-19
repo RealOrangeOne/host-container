@@ -16,7 +16,8 @@
   ],
   "exclude": [
     "dist",
-    "node_modules"
+    "node_modules",
+    "scripts/"
   ],
   "typeRoots": [
     "node_modules",
