@@ -2,15 +2,17 @@
   "name": "tstatic",
   "version": "1.0.0",
   "description": "Container to host simple static applications using a node server, so files can be deployed using rsync",
-  "main": "./src/server.js",
+  "main": "node ./dist/index.js",
   "bin": {
-    "tstatic": "./src/server.js"
+    "tstatic": "node ./dist/index.js"
   },
   "scripts": {
-    "test": "npm run mocha && npm run lint && nsp check",
-    "lint": "eslint src/ tests/",
-    "start": "./src/server.js site/",
-    "mocha": "NODE_ENV=test mocha tests/**.test.js"
+    "start": "node ./dist/index.js",
+    "postinstall": "typings install",
+    "build": "tsc",
+    "test": "npm run build && npm run mocha && nsp check",
+    "mocha": "mocha --compilers ts:ts-node/register --require scripts/test-helper.js  tests/**.test.ts",
+    "lint": "tslint src/**/*.ts"
   },
   "engines": {
     "node": "6.9.4"
@@ -25,22 +27,30 @@
   },
   "homepage": "https://github.com/RealOrangeOne/tstatic#readme",
   "dependencies": {
-    "basic-auth": "^1.1.0",
+    "basic-auth": "=1.1.0",
     "compression": "=1.6.2",
     "connect-static-file": "=1.1.2",
-    "express": "=4.14.0",
-    "express-basic-auth": "=0.2.3",
+    "docopt": "=0.6.2",
+    "express": "=4.14.1",
+    "express-basic-auth": "=0.3.2",
     "express-ip-access-control": "=1.0.5",
-    "express-winston": "=2.1.2",
+    "express-winston": "=2.2.0",
     "helmet": "=3.4.0",
-    "opbeat": "=4.7.0",
+    "opbeat": "=4.11.0",
+    "open": "=0.0.5",
     "serve-index": "=1.8.0",
-    "winston": "=2.3.0"
+    "winston": "=2.3.1"
   },
   "devDependencies": {
-    "eslint-config": "dabapps/eslint-config#2.0.5",
+    "chai": "=3.5.0",
+    "chai-as-promised": "=6.0.0",
     "mocha": "=3.2.0",
+    "node-fetch": "=1.6.3",
     "nsp": "=2.6.2",
-    "supertest": "=2.0.1"
+    "supertest": "=3.0.0",
+    "ts-node": "=2.1.0",
+    "tslint": "=4.4.2",
+    "typescript": "=2.1.6",
+    "typings": "=2.1.0"
   }
 }
