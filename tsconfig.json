@@ -17,7 +17,8 @@
   "exclude": [
     "dist",
     "node_modules",
-    "scripts/"
+    "scripts/",
+    "src/__tests__"
   ],
   "typeRoots": [
     "node_modules",

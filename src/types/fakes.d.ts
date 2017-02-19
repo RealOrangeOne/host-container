@@ -9,3 +9,4 @@ declare module 'opbeat';
 declare module 'docopt';
 declare module 'open';
 declare module 'node-fetch';
+declare module 'chai';

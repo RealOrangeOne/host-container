@@ -39,7 +39,7 @@ export default function createServer(opts : Options) : express.Application {
     }
 
     app.use(staticFileHandle(opts.serveDir));
-    app.use(handle404);
+    app.use(handle404(opts.serveDir));
 
     app.use(compression({ level: 9 }));
     app.use(helmet());

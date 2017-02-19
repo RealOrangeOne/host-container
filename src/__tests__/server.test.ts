@@ -33,7 +33,8 @@ describe('Server', function () {
            open: false
        }, '/foo/bar', function (response : any) {
            expect(response.ok).to.be.false;
-           done();
+           expect(response.status).to.equal(404);
+           expect(response.text()).to.eventually.include('Cannot GET').notify(done);
        });
     });
 
@@ -51,10 +52,7 @@ describe('Server', function () {
                     open: false
                 }, path, function (response : any) {
                     expect(response.status).to.equal(200);
-                    response.text().then(function (text : any) {
-                        expect(text).to.equal(body);
-                        done();
-                    });
+                    expect(response.text()).to.eventually.equal(body).notify(done);
                 });
             });
         });
