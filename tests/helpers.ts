@@ -1,7 +1,6 @@
-import createServer from '../server';
-import { Options } from '../types';
+import createServer from '../src/server';
+import { Options } from '../src/types';
 import fetch from 'node-fetch';
-
 
 
 export function runServer(opts: Object, url : string, callback: Function) {

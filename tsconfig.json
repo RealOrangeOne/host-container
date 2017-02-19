@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
     "outDir": "dist",
-    "rootDir": "src",
     "allowSyntheticDefaultImports": true,
     "noImplicitAny": true,
     "experimentalDecorators": true,
@@ -18,7 +17,7 @@
     "dist",
     "node_modules",
     "scripts/",
-    "src/__tests__"
+    "tests/"
   ],
   "typeRoots": [
     "node_modules",
