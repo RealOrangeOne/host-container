@@ -10,7 +10,7 @@
     "start": "node ./dist/index.js",
     "postinstall": "typings install",
     "build": "tsc",
-    "test": "npm run build && nsp check",
+    "test": "npm run build && npm run mocha && nsp check",
     "mocha": "NODE_ENV=test mocha --compilers ts:ts-node/register --require scripts/test-helper.js src/__tests__/**.test.ts",
     "lint": "tslint src/**/*.ts"
   },
