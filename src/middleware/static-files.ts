@@ -1,6 +1,6 @@
 import * as express from 'express';
 import * as serveIndex from 'serve-index';
-import path from 'path';
+import * as path from 'path';
 
 function isDirectory(url : string) : boolean {
     return /\/$/.test(url);
