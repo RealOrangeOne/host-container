@@ -1,4 +1,9 @@
-# tstatic [![CircleCI](https://circleci.com/gh/RealOrangeOne/tstatic/tree/master.svg?style=svg)](https://circleci.com/gh/RealOrangeOne/tstatic/tree/master)
+# tstatic
+
+[![CircleCI](https://img.shields.io/circleci/project/github/RealOrangeOne/tstatic.svg?style=flat-square)](https://circleci.com/gh/RealOrangeOne/tstatic/)
+[![npm](https://img.shields.io/npm/dm/tstatic.svg?style=flat-square)](https://www.npmjs.com/package/tstatic)
+[![npm](https://img.shields.io/npm/v/tstatic.svg?style=flat-square)](https://www.npmjs.com/package/tstatic)
+
 The only static-file server you'll ever need!
 
 ### Features:
@@ -14,7 +19,7 @@ The only static-file server you'll ever need!
 ### Usage
 ```bash
   tstatic <dir> [options]
-    
+
   -h --help     Show this screen.
   --version     Show version.
   -p <port> --port=<port>  Port to listen on.
@@ -52,4 +57,3 @@ Enable opbeat error reporting. `--opbeat` only enables this, configuration is do
 
 ##### `open`
 Open the server in the browser one started. It will open in your default browser, and use url `http://0.0.0.0:<port>`.
-

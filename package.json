@@ -1,6 +1,6 @@
 {
   "name": "tstatic",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "description": "The only static-file server you'll ever need!",
   "main": "./dist/server.js",
   "bin": {
