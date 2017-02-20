@@ -2,13 +2,14 @@
   "name": "tstatic",
   "version": "0.0.1",
   "description": "The only static-file server you'll ever need!",
-  "main": "node ./dist/index.js",
+  "main": "./dist/server.js",
   "bin": {
-    "tstatic": "node ./dist/index.js"
+    "tstatic": "./dist/index.js"
   },
   "scripts": {
     "start": "node ./dist/index.js",
     "postinstall": "typings install",
+    "prepublish": "npm run build",
     "build": "tsc",
     "test": "npm run build && npm run mocha && nsp check",
     "mocha": "mocha --compilers ts:ts-node/register --require scripts/test-helper.js  tests/**.test.ts",
