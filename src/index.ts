@@ -1,11 +1,12 @@
+#!/usr/bin/env node
 import { docopt } from 'docopt';
 import createServer from './server';
 import getArgs from './cli';
 import * as open from 'open';
 
-console.log("Starting Server...");
-
 const ARGS = getArgs();
+
+console.log("Starting Server...");
 const app = createServer(ARGS);
 
 export const server = app.listen(ARGS.port, function () {
