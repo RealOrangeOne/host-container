@@ -1,7 +1,7 @@
 {
   "name": "tstatic",
-  "version": "1.0.0",
-  "description": "Container to host simple static applications using a node server, so files can be deployed using rsync",
+  "version": "0.0.1",
+  "description": "The only static-file server you'll ever need!",
   "main": "node ./dist/index.js",
   "bin": {
     "tstatic": "node ./dist/index.js"

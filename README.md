@@ -23,7 +23,6 @@ The only static-file server you'll ever need!
   -l --list-dir  List Directory.
   --opbeat  Enable Opbeat.
   -o --open  Open in browser after start.
- 
 ```
 `dir` is where your static files are.
 
