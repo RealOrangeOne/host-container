@@ -2,3 +2,9 @@
 tests/**
 typings/**
 scripts/**
+.idea/**
+circle.yml
+tsconfig.json
+tslint.json
+typings.json
+
