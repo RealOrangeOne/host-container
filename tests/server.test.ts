@@ -5,10 +5,6 @@ import * as path from 'path';
 
 
 describe('Server', function () {
-    it('should test', function () {
-        expect(2 + 2).to.equal(4);
-    });
-
     it('Should be usable', function (done) {
        runServer({
            allowed_ips: [],
