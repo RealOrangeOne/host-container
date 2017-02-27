@@ -11,7 +11,7 @@
     "prepublish": "typings install && npm run build",
     "build": "tsc",
     "test": "npm run build && npm run mocha && nsp check",
-    "mocha": "mocha --compilers ts:ts-node/register --require scripts/test-helper.js  tests/**.test.ts",
+    "mocha": "mocha --compilers ts:ts-node/register --require scripts/test-helper.js --recursive --bail tests/**/*.test.ts tests/*.test.ts",
     "lint": "tslint src/**/*.ts"
   },
   "engines": {
