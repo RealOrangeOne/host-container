@@ -32,7 +32,7 @@
     "connect-static-file": "=1.1.2",
     "docopt": "=0.6.2",
     "express": "=4.14.1",
-    "express-basic-auth": "=0.3.2",
+    "express-basic-auth": "1.0.1",
     "express-ip-access-control": "=1.0.5",
     "express-winston": "=2.2.0",
     "helmet": "=3.4.0",
