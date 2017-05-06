@@ -15,6 +15,7 @@ import { Options } from './types';
 export default function createServer(opts : Options) : express.Application {
     const app = express();
 
+    app.disable('x-powered-by');
     if (process.env.NODE_ENV !== 'test') {
         app.use(logging);
     }

@@ -20,6 +20,21 @@ describe('Server', function () {
        });
     });
 
+    it('Should nave no x-powered-by header', function (done) {
+       runServer({
+           allowed_ips: [],
+           basicAuth: [],
+           dirList: false,
+           serveDir: 'site/',
+           opbeat: false,
+           open: false
+       }, '/index.html', function (response : any) {
+              expect(response.status).to.equal(200);
+              expect(response.headers.get('x-powered-by')).to.equal(null);
+              done();
+       });
+    });
+
     describe('index route', function () {
         const body = fs.readFileSync(path.join(__dirname, '..', 'site', 'index.html')).toString();
 
