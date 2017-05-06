@@ -16,6 +16,7 @@ export default function createServer(opts : Options) : express.Application {
     const app = express();
 
     app.disable('x-powered-by');
+    app.use(helmet());
     if (process.env.NODE_ENV !== 'test') {
         app.use(logging);
     }
@@ -43,7 +44,6 @@ export default function createServer(opts : Options) : express.Application {
     app.use(handle404(opts.serveDir));
 
     app.use(compression({ level: 9 }));
-    app.use(helmet());
     if (opts.opbeat) {
         app.use(opbeat.start({
             active: opts.opbeat

@@ -3,7 +3,7 @@
     "compression": "registry:dt/compression#0.0.0+20160725212620",
     "debug": "registry:npm/debug#2.0.0+20160723033700",
     "express": "registry:npm/express#4.14.0+20160925001530",
-    "helmet": "registry:dt/helmet#0.0.0+20161005184000",
+    "helmet": "registry:dt/helmet#0.0.0+20170310054102",
     "serve-index": "registry:dt/serve-index#1.7.2+20160428043022"
   },
   "globalDependencies": {
