@@ -10,9 +10,10 @@
     "start": "node ./dist/index.js",
     "prepublish": "typings install && npm run build",
     "build": "tsc",
-    "test": "npm run build && npm run lint && npm run mocha && nsp check",
-    "mocha": "mocha --compilers ts:ts-node/register --require scripts/test-helper.js --recursive --bail tests/**/*.test.ts tests/*.test.ts",
-    "lint": "tslint src/**/*.ts"
+    "test": "npm run build && npm run lint && npm run coverage && nsp check",
+    "mocha": "mocha --require ts-node/register --require scripts/test-helper.js --recursive --bail 'tests/**/*.test.ts'",
+    "lint": "tslint src/**/*.ts",
+    "coverage": "nyc npm run mocha"
   },
   "engines": {
     "node": "6.9.4"
@@ -47,6 +48,7 @@
     "mocha": "=3.2.0",
     "node-fetch": "=1.6.3",
     "nsp": "=2.6.3",
+    "nyc": "=10.2.0",
     "supertest": "=3.0.0",
     "ts-node": "=2.1.0",
     "tslint": "=4.5.1",
