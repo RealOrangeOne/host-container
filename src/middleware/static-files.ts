@@ -6,7 +6,7 @@ function isDirectory(url: string): boolean {
     return /\/$/.test(url);
 }
 
-export function indexHandle(request: express.Request, response: express.Response, next: Function) {
+export function indexHandle(request: express.Request, response: express.Response, next: () => void) {
     if (isDirectory(request.url)) {
         request.url = path.join(request.url, 'index.html');
     }
