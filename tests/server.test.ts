@@ -113,7 +113,7 @@ describe('Server', function () {
         });
       });
 
-      it('Should block cache', function (done) {
+      it('Should block referrer transfer', function (done) {
         runServer(SERVER_SETTINGS, '/index.html', function (response : any) {
           expect(response.status).to.equal(200);
           expect(response.headers.get('referrer-policy')).to.contain('same-origin');
