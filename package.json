@@ -12,7 +12,7 @@
     "build": "tsc",
     "test": "npm run build && npm run lint && npm run mocha && nsp check",
     "mocha": "mocha --compilers ts:ts-node/register --require scripts/test-helper.js --recursive --bail tests/**/*.test.ts tests/*.test.ts",
-    "lint": "tslint src/**/*.ts"
+    "lint": "tslint src/**/*.ts --type-check --project tsconfig.json"
   },
   "engines": {
     "node": "6.9.4"
@@ -42,7 +42,7 @@
     "winston": "=2.3.1"
   },
   "devDependencies": {
-    "chai": "=3.5.0",
+    "chai": "=3.5.  0",
     "chai-as-promised": "=6.0.0",
     "mocha": "=3.2.0",
     "node-fetch": "=1.6.3",
