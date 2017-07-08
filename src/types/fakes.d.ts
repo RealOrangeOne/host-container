@@ -10,3 +10,5 @@ declare module 'docopt';
 declare module 'open';
 declare module 'node-fetch';
 declare module 'chai';
+declare module 'expect-ct';
+declare module 'referrer-policy';

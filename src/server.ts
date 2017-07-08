@@ -4,6 +4,9 @@ import * as AccessControl from 'express-ip-access-control';
 import * as compression from 'compression';
 import * as helmet from 'helmet';
 import * as opbeat from 'opbeat';
+import * as expectCt from 'expect-ct';
+import * as referrerPolicy from 'referrer-policy';
+
 
 import logging from './middleware/logging';
 import basicAuthHandler from './middleware/basic-auth';
@@ -12,11 +15,25 @@ import handle404 from './middleware/404';
 
 import { Options } from './types';
 
+const PKG = require('../package.json');
+
 export default function createServer(opts : Options) : express.Application {
     const app = express();
 
-    app.disable('x-powered-by');
     app.use(helmet());
+    app.use(helmet.hidePoweredBy({setTo: `tstatic ${PKG.version}`}));
+    app.use(helmet.ieNoOpen());
+    app.use(helmet.noCache());
+    app.use(referrerPolicy({ policy: 'same-origin' }));
+    app.use(expectCt({
+        enforce: false,
+        maxAge: 1000
+    }));
+    app.use(helmet.hsts({
+        maxAge: 5184000,
+        setIf: (req, res) => req.secure,
+    }));
+
     if (process.env.NODE_ENV !== 'test') {
         app.use(logging);
     }
