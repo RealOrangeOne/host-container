@@ -26,10 +26,12 @@ export default function createServer(opts : Options) : express.Application {
         enforce: false,
         maxAge: 1000
     }));
-    app.use(helmet.hsts({
-        maxAge: 5184000,
-        setIf: (req, res) => req.secure,
-    }));
+
+    if (!opts.allowHttp) {
+      app.use(helmet.hsts({
+          maxAge: 5184000
+      }));
+    }
 
     if (process.env.NODE_ENV !== 'test') {
         app.use(logging);

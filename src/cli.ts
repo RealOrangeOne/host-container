@@ -19,6 +19,7 @@ Options:
   -b <auth> --basic-auth=<auth>   Enable basic-auth.
   -i <ips> --ips=<ips>  Allowed IP addresses.
   -l --list-dir  List Directory.
+  -s --allow-http  Allow connection over HTTP.
   --opbeat  Enable Opbeat.
   -o --open  Open in browser after start.
 `;
@@ -35,6 +36,7 @@ export default function getArgs() : Options {
         dirList: rawArgs['--list-dir'],
         serveDir: rawArgs['<dir>'],
         opbeat: rawArgs['--opbeat'],
-        open: rawArgs['--open']
+        open: rawArgs['--open'],
+        allowHttp: rawArgs['--allow-http']
     };
 }

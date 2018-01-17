@@ -7,4 +7,5 @@ export interface Options {
     serveDir: string;
     opbeat: boolean;
     open: boolean;
+    allowHttp: boolean;
 }
