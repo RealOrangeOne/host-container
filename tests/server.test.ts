@@ -49,7 +49,8 @@ describe('Server', function () {
         dirList: false,
         serveDir: 'site/',
         opbeat: false,
-        open: false
+        open: false,
+        allowHttp: false
       } as Options;
 
       it('Should have no powered by header', function (done) {
@@ -116,6 +117,14 @@ describe('Server', function () {
         runServer(SERVER_SETTINGS, '/index.html', function (response : any) {
           expect(response.status).to.equal(200);
           expect(response.headers.get('referrer-policy')).to.contain('same-origin');
+          done();
+        });
+      });
+
+      it('Should have HSTS header', function (done) {
+        runServer(SERVER_SETTINGS, '/index.html', function (response : any) {
+          expect(response.status).to.equal(200);
+          expect(response.headers.get('strict-transport-security')).to.contain('5184000');
           done();
         });
       });

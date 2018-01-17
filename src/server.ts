@@ -29,7 +29,9 @@ export default function createServer(opts : Options) : express.Application {
 
     if (!opts.allowHttp) {
       app.use(helmet.hsts({
-          maxAge: 5184000
+          maxAge: 5184000,
+          setIf: () => true,
+          includeSubdomains: false
       }));
     }
 
