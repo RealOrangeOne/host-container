@@ -55,8 +55,7 @@ describe('Server', function () {
       it('Should have no powered by header', function (done) {
         runServer(SERVER_SETTINGS, '/index.html', function (response : any) {
           expect(response.status).to.equal(200);
-          expect(response.headers.get('x-powered-by')).to.contain('tstatic');
-          expect(response.headers.get('x-powered-by')).to.contain(PKG.version);
+          expect(response.headers.get('x-powered-by')).to.be.null;
           done();
         });
       });
