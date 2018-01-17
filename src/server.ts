@@ -15,13 +15,10 @@ import handle404 from './middleware/404';
 
 import { Options } from './types';
 
-const PKG = require('../package.json');
-
 export default function createServer(opts : Options) : express.Application {
     const app = express();
 
     app.use(helmet());
-    app.use(helmet.hidePoweredBy({setTo: `tstatic ${PKG.version}`}));
     app.use(helmet.ieNoOpen());
     app.use(helmet.noCache());
     app.use(referrerPolicy({ policy: 'same-origin' }));
