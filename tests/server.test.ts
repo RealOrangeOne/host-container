@@ -108,5 +108,13 @@ describe('Server', function () {
           done();
         });
       });
+
+      it('Should not have HSTS header if HTTP is allowed', function (done) {
+        runServer({...SERVER_SETTINGS, allowHttp: true}, '/index.html', function (response : any) {
+          expect(response.status).to.equal(200);
+          expect(response.headers.get('strict-transport-security')).to.be.null;
+          done();
+        });
+      });
     });
 });
