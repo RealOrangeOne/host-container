@@ -22,26 +22,6 @@ describe('Server', function () {
        });
     });
 
-    describe('index route', function () {
-        const body = fs.readFileSync(path.join(__dirname, '..', 'site', 'index.html')).toString();
-
-        ['', '/', '/index.html'].forEach(function (path : string) {
-            it('should render ' + path, function (done) {
-                runServer({
-                    allowed_ips: [],
-                    basicAuth: [],
-                    dirList: false,
-                    serveDir: 'site/',
-                    opbeat: false,
-                    open: false
-                }, path, function (response : any) {
-                    expect(response.status).to.equal(200);
-                    expect(response.text()).to.eventually.equal(body).notify(done);
-                });
-            });
-        });
-    });
-
     describe('secure headers', function () {
       const SERVER_SETTINGS = {
         allowed_ips: [],
