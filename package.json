@@ -10,7 +10,7 @@
     "start": "node ./dist/index.js",
     "prepublish": "npm run build",
     "build": "tsc",
-    "test": "npm run build && npm run lint && npm run mocha",
+    "test": "npm run lint && npm run mocha",
     "mocha": "mocha --compilers ts:ts-node/register --require scripts/test-helper.js --recursive --bail tests/**/*.test.ts tests/*.test.ts",
     "lint": "tslint src/**/*.ts --type-check --project tsconfig.json"
   },
