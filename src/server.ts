@@ -4,7 +4,6 @@ import * as AccessControl from 'express-ip-access-control';
 import * as compression from 'compression';
 import * as helmet from 'helmet';
 import * as opbeat from 'opbeat';
-import * as expectCt from 'expect-ct';
 import * as referrerPolicy from 'referrer-policy';
 import * as morgan from 'morgan';
 
@@ -17,22 +16,19 @@ import { Options } from './types';
 export default function createServer(opts : Options) : express.Application {
     const app = express();
 
-    app.use(helmet());
-    app.use(helmet.ieNoOpen());
-    app.use(helmet.noCache());
-    app.use(referrerPolicy({ policy: 'same-origin' }));
-    app.use(expectCt({
-        enforce: false,
-        maxAge: 1000
+    app.use(helmet({
+        hsts: {
+            maxAge: 5184000,
+            setIf: () => !opts.allowHttp,
+            includeSubdomains: false
+        },
+        noCache: true,
+        expectCt: {
+            enforce: false,
+            maxAge: 1000
+        }
     }));
-
-    if (!opts.allowHttp) {
-      app.use(helmet.hsts({
-          maxAge: 5184000,
-          setIf: () => true,
-          includeSubdomains: false
-      }));
-    }
+    app.use(referrerPolicy({ policy: 'same-origin' }));
 
     if (process.env.NODE_ENV !== 'test') {
         app.use(morgan('combined'));
