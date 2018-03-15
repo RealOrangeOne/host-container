@@ -15,7 +15,7 @@
     "lint": "tslint src/**/*.ts --type-check --project tsconfig.json"
   },
   "engines": {
-    "node": "8.9.4"
+    "node": "8.10.0"
   },
   "repository": {
     "type": "git",
