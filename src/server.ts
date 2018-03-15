@@ -3,7 +3,6 @@ import * as express from 'express';
 import * as AccessControl from 'express-ip-access-control';
 import * as compression from 'compression';
 import * as helmet from 'helmet';
-import * as opbeat from 'opbeat';
 import * as referrerPolicy from 'referrer-policy';
 import * as morgan from 'morgan';
 
@@ -57,11 +56,6 @@ export default function createServer(opts : IOptions) : express.Application {
     app.use(handle404(opts.serveDir));
 
     app.use(compression({ level: 9 }));
-    if (opts.opbeat) {
-        app.use(opbeat.start({
-            active: opts.opbeat
-        }).middleware.express());
-    }
 
     return app;
 }

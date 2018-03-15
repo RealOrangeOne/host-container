@@ -5,7 +5,6 @@ export interface IOptions {
     basicAuth: string[];
     dirList: boolean;
     serveDir: string;
-    opbeat: boolean;
     open: boolean;
     allowHttp: boolean;
 }
