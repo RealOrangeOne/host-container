@@ -1,5 +1,5 @@
 
-export interface Options {
+export interface IOptions {
     port: number;
     allowed_ips: string[];
     basicAuth: string[];

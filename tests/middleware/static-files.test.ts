@@ -2,7 +2,7 @@ import { expect } from 'chai';
 import { runServer } from '../helpers';
 import * as fs from 'fs';
 import * as path from 'path';
-import { Options } from '../../src/types';
+import { IOptions } from '../../src/types';
 
 
 describe('Static Files', function () {
@@ -50,7 +50,7 @@ describe('Static Files', function () {
       serveDir: 'site/',
       opbeat: false,
       open: false
-    } as Options;
+    } as IOptions;
 
     it('Should allow directory listing', function (done) {
       runServer(SERVER_CONFIG, '/', function (response : any) {

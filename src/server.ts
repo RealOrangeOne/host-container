@@ -11,9 +11,9 @@ import basicAuthHandler from './middleware/basic-auth';
 import { serveIndexHandle, indexHandle, staticFileHandle } from './middleware/static-files';
 import handle404 from './middleware/404';
 
-import { Options } from './types';
+import { IOptions } from './types';
 
-export default function createServer(opts : Options) : express.Application {
+export default function createServer(opts : IOptions) : express.Application {
     const app = express();
 
     app.use(helmet({

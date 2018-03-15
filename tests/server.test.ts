@@ -2,7 +2,7 @@ import { expect } from 'chai';
 import { runServer } from './helpers';
 import * as fs from 'fs';
 import * as path from 'path';
-import { Options } from '../src/types';
+import { IOptions } from '../src/types';
 
 const PKG = require('../package.json');
 
@@ -31,7 +31,7 @@ describe('Server', function () {
         opbeat: false,
         open: false,
         allowHttp: false
-      } as Options;
+      } as IOptions;
 
       it('Should have no powered by header', function (done) {
         runServer(SERVER_SETTINGS, '/index.html', function (response : any) {

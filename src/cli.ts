@@ -1,5 +1,5 @@
 import { docopt } from 'docopt';
-import { Options } from './types';
+import { IOptions } from './types';
 
 const PKG = require('../package.json');
 
@@ -24,7 +24,7 @@ Options:
   -o --open  Open in browser after start.
 `;
 
-export default function getArgs() : Options {
+export default function getArgs() : IOptions {
     const rawArgs = docopt(ARG_DATA, {
         version: PKG.version,
         help: true
