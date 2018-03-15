@@ -2,7 +2,7 @@
 import { docopt } from 'docopt';
 import createServer from './server';
 import getArgs from './cli';
-import * as open from 'open';
+import open from 'open';
 
 const ARGS = getArgs();
 
