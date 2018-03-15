@@ -12,7 +12,6 @@ The only static-file server you'll ever need!
 - Custom 404 page
 - Optimum Compression - [`compression`](https://www.npmjs.com/package/compression)
 - Security checks / headers - [`helmet`](https://www.npmjs.com/package/helmet)
-- Opbeat error-reporting - [docs](https://opbeat.com/docs/articles/get-started-with-express/)
 - Whitelist IP Addresses - [`express-ip-access-control`](https://www.npmjs.com/package/express-ip-access-control)
 - Directory Listing - [`serve-index`](https://www.npmjs.com/package/serve-index)
 
@@ -51,9 +50,6 @@ Format: `-i 192.168.1.100,192.168.1.101`
 
 ##### `list-dir`
 Enables directory listing. Allow browseing
-
-##### `opbeat`
-Enable opbeat error reporting. `--opbeat` only enables this, configuration is done using [environment varables](https://opbeat.com/docs/articles/get-started-with-express/#appId).
 
 ##### `open`
 Open the server in the browser one started. It will open in your default browser, and use url `http://0.0.0.0:<port>`.
