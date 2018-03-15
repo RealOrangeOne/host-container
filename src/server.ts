@@ -6,9 +6,8 @@ import * as helmet from 'helmet';
 import * as opbeat from 'opbeat';
 import * as expectCt from 'expect-ct';
 import * as referrerPolicy from 'referrer-policy';
+import * as morgan from 'morgan';
 
-
-import logging from './middleware/logging';
 import basicAuthHandler from './middleware/basic-auth';
 import { serveIndexHandle, indexHandle, staticFileHandle } from './middleware/static-files';
 import handle404 from './middleware/404';
@@ -36,7 +35,7 @@ export default function createServer(opts : Options) : express.Application {
     }
 
     if (process.env.NODE_ENV !== 'test') {
-        app.use(logging);
+        app.use(morgan('combined'));
     }
 
     if (opts.allowed_ips.length) {
