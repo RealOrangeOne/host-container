@@ -1,3 +1,5 @@
+require('ts-node/register');
+
 const chai = require('chai');
 const chaiAsPromised = require('chai-as-promised');
 
