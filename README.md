@@ -7,7 +7,6 @@
 The only static-file server you'll ever need!
 
 ### Features:
-- Logging - [`winston`](https://www.npmjs.com/package/winston)
 - Basic-Auth - [`basic-auth`](https://www.npmjs.com/package/basic-auth)
 - Custom 404 page
 - Optimum Compression - [`compression`](https://www.npmjs.com/package/compression)
@@ -25,7 +24,6 @@ The only static-file server you'll ever need!
   -b <auth> --basic-auth=<auth>   Enable basic-auth.
   -i <ips> --ips=<ips>  Allowed IP addresses.
   -l --list-dir  List Directory.
-  --opbeat  Enable Opbeat.
   -o --open  Open in browser after start.
 ```
 `dir` is where your static files are.
