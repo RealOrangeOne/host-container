@@ -8,7 +8,7 @@
   },
   "scripts": {
     "start": "node ./dist/index.js",
-    "prepublish": "npm run build",
+    "prepublishOnly": "npm run build",
     "build": "tsc",
     "test": "npm run lint && npm run mocha",
     "mocha": "mocha --require scripts/test-helper.js --recursive --bail tests/**/*.test.ts tests/*.test.ts",
