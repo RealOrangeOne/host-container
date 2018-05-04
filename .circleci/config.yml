@@ -15,3 +15,7 @@ jobs:
             - run:
                 name: Run Tests
                 command: npm test
+            - setup_remote_docker
+            - run:
+                name: Build docker container
+                command: docker build .
