@@ -1,12 +1,12 @@
 FROM node:8-alpine
 
-COPY ./src /app/src
-COPY ./package.json /app/package.json
-COPY ./package-lock.json /app/package-lock.json
-COPY ./tsconfig.json /app/tsconfig.json
+COPY ./src /opt/tstatic/src
+COPY ./package.json opt/tstatic/package.json
+COPY ./package-lock.json opt/tstatic/package-lock.json
+COPY ./tsconfig.json opt/tstatic/tsconfig.json
 COPY ./site /var/www
 
-WORKDIR /app
+WORKDIR /opt/tstatic
 
 RUN apk add --no-cache git
 
@@ -18,6 +18,10 @@ RUN npm run build
 
 RUN npm prune --production
 
-CMD npm start -- /var/www
+RUN npm install -g .
+
+WORKDIR /
+
+CMD tstatic /var/www
 
 EXPOSE 5000
