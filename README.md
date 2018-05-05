@@ -53,7 +53,7 @@ Enables directory listing. Allow browseing
 Open the server in the browser one started. It will open in your default browser, and use url `http://0.0.0.0:<port>`.
 
 ### Docker
-Included in this repo is a `Dockerfile` to use. The default setup requires being run from the project directory, and will serve `/var/www` in the container on port `5000`. By default, this directory is empty, however can be overriden.
+Included in this repo is a `Dockerfile` to use. The default setup requires being run from the project directory, and will serve `/var/www` in the container on port `5000`. By default, this directory is contains a simple index file, however can be overriden.
 
 Below is an example `docker-compose.yml` file you can use with it:
 
@@ -70,5 +70,3 @@ services:
     ports:
         - "5000:5000"
 ```
-
-__Note__: `tstatic` isn't installed into the path, so run it using `npm start --`
